@@ -59,6 +59,8 @@ RUN echo y | android update sdk --all --no-ui --force --filter extra-android-m2r
 RUN echo y | android update sdk --all --no-ui --force --filter extra-google-m2repository
 RUN echo y | android update sdk --all --no-ui --force --filter source-22
 RUN echo y | android update sdk --all --no-ui --force --filter build-tools-22.0.1
+RUN echo y | android update sdk --all --no-ui --force --filter android-21
+RUN echo y | android update sdk --all --no-ui --force --filter build-tools-21.1.2
 
 # TODO: Merge this into the studio installation step
 RUN sudo ln -s /opt/android-studio/bin/studio.sh /bin/studio
