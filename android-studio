@@ -1,7 +1,7 @@
 #!/bin/bash
 
 for dir in .studio-home .gradle .idea .android/avd; do
-  mkdir -p .docker-dev/$$dir
+  mkdir -p .docker-dev/$dir
 done
 
 CURRENT_DIR=`pwd`
@@ -16,7 +16,7 @@ docker run -ti --rm \
           -e GRADLE_USER_HOME='/workspace/.docker-dev/.gradle/home' \
           -v /tmp/.X11-unix:/tmp/.X11-unix \
           -v $CURRENT_DIR:/workspace \
-          -v $CURRENT_DIR/.docker-dev/.studio-home:/home/developer/.AndroidStudio1.2\
+          -v $CURRENT_DIR/.docker-dev/.studio-home:/home/developer/.AndroidStudio1.2 \
           -v $CURRENT_DIR/.docker-dev/.android/avd:/home/developer/.android/avd \
           fgrehm/android-studio \
           /bin/studio
