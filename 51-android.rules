@@ -1,0 +1,6 @@
+# udev rules to detect connected devices
+# add one line for each vendor you're going to use
+# http://developer.android.com/tools/device.html#VendorIds
+
+# LG device rules
+SUBSYSTEM=="usb", ATTR{idVendor}=="1004", MODE="0666", GROUP="plugdev"
